@@ -1,0 +1,29 @@
+project: docker, fastapi, curl data set, lit-GPT
+
+In this project, I explore how to create an api using fastapi with a model from 
+lit-gpt responding at the other end of the api. lit-gpt is for getting the nlp model
+and docker is for containerizing it all. The
+
+## Getting Started
+
+### Prerequisites
+
+* Docker
+* Docker-compose
+
+### Installing
+
+* Clone the repo
+* Run `docker-compose up --build` in the root directory
+
+## Running the tests
+
+* Run `curl -X POST -d '{"text":"This is a test"}' http://localhost:8000/predict` in the root directory
+
+## Built With
+
+* [Docker](https://www.docker.com/) - Containerization
+
+## Authors
+
+Johan
