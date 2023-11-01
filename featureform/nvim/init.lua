@@ -1,0 +1,2 @@
+require("carbon")
+print("hello")
