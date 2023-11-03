@@ -1,0 +1,6 @@
+outs:
+- md5: 47ed6337632963433d9198c4f5d35cdf.dir
+  size: 603747660
+  nfiles: 1403
+  hash: md5
+  path: CamVid
