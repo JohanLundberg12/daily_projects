@@ -51,7 +51,7 @@ minikube pause # pause kubernetes
 
 ```
 minikube delete -all # delete one or all kubernetes clusters
-``
+```
 
 
 ### In depth explanations
