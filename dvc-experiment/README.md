@@ -67,7 +67,7 @@ We can do:
 ```
 git checkout HEAD~1" [data.dvc] 
 dvc checkout 
-``
+```
 to get the previous version of our data.
 We can then commit that using:
 ```
