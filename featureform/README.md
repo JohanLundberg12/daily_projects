@@ -6,32 +6,52 @@ Today I am learning about AWS, Kubernetes (K8s), docker, ssh, minikube and maybe
 * Minikube: Create virtual machine on your local machine.
 * Container runtime: Docker (default choice of k8s) and included in the minikube distribution. It needs a linux system to run, therefore it needs a runtime like docker.
 * Today I set up my AWS account and went through some initial guides. This is to set up kubernetes in the future. However, for now I'm using Minikube, which does not require AWS. 
-* Featureform: A store for your features (duh).
+* Featureform: A store for your features. It enables the data scientist to better define, manage and serve the ML model features. It facilitates deployment, enhances collaboration, organizes experimentation, preserves compliance. 
 
 
 ### Useful Commands
 
 As always (tldr for quick explanations).
 
-minikube start: Start your local cluster
+```
+minikube start #Start your local cluster
+```
 
-minikube status: The internal component status for every component of minikube and k8s. 
+```
+minikube status: #The internal component status for every component of minikube and k8s. 
+```
 
-minikube dashboard: UI to manage clusters and deploy applications. Gives an overview of cluster operations and make it easier to modify resources. 
+```
+minikube dashboard: #UI to manage clusters and deploy applications. Gives an overview of cluster operations and make it easier to modify resources. 
+```
 
-minikube ssh: To ssh into the minikube VM.
+```
+minikube ssh: #To ssh into the minikube VM.
+```
 
-kubectl: Kubernetes' CLT to interact with the cluster.
+```
+kubectl: #Kubernetes' CLT to interact with the cluster.
+```
 
-minikube [COMMAND] [COMMAND] --help: Learn more about a command. 
+```
+minikube [COMMAND] [COMMAND] --help: #Learn more about a command. 
+```
 
-minikube stop
+```
+minikube stop # stop the runnning cluster
+```
 
-minikube stop -all
+```
+minikube stop -all # stop all running clusters
+```
 
-minikube pause
+```
+minikube pause # pause kubernetes
+```
 
-minikube delete -all
+```
+minikube delete -all # delete one or all kubernetes clusters
+``
 
 
 ### In depth explanations
