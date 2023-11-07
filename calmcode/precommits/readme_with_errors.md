@@ -1,3 +1,4 @@
 # project
 
-This project contains both cde and setingz.
+
+This project contains both code and settings.
