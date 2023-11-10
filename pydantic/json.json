@@ -1,0 +1,4 @@
+[
+    {"title":"The FooBar", "author":"Joe", "publication_year":1960, "price": 10, "isbn_code":"0753555190"},
+    {"title":"The FooBar", "author":"Joe", "publication_year":1960, "price": 100, "isbn_code": "0753555190"}
+]

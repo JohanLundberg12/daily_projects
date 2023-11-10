@@ -12,12 +12,31 @@ class ISBNCodeFormatError(Exception):
         super().__init__(message)
 
 
+class ISBNCodeMissingError(Exception):
+    """Custom Error that is raised whent the ISBN code is missing."""
+
+    def __init__(self, title: str, message: str) -> None:
+        self.title = title
+        self.message = message
+        super().__init__(message)
+
+
 class Movie(pydantic.BaseModel):
     title: str
     author: str
     publication_year: int
     price: float
     isbn_code: Optional[str]
+
+    @pydantic.model_validator(mode="before")
+    @classmethod
+    def check_isbncode(cls, value):
+        """ "Make sure there is a isbn_code defined."""
+        if "isbn_code" not in value:
+            raise ISBNCodeMissingError(
+                title=value["title"], message="Document must have ISBN Code"
+            )
+        return value
 
     @pydantic.field_validator("isbn_code")
     @classmethod
@@ -48,9 +67,31 @@ class Movie(pydantic.BaseModel):
 
         return value
 
+    # whether __setattr__ is allowed
+    class Config:
+        """Pydantic config class"""
+
+        frozen = True
+        str_to_lower = True  # lower case when printing
+
 
 # Load the JSON file into a variable
 with open("json.json") as f:
     data = json.load(f)
     movies: List[Movie] = [Movie(**movie) for movie in data]
     print(movies)
+    print(movies[0].title)
+    print(movies[0].author)
+
+    # this will raise a Validation Error due to fronzen=True
+    # movies[0].title = "My Movie"
+
+    # include x fields and exclude everything else
+    print(
+        movies[0].model_dump(
+            include={"title", "author"},
+        )
+    )
+
+    # exclude x fields and include everything else
+    print(movies[0].model_dump(exclude={"isbn_code"}))
