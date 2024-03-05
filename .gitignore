@@ -1,1 +1,12 @@
 .vscode/
+.venv
+.make
+.sha
+kubectl*
+*.sh
+aws*
+__pycache__
+pytests
+.featureform
+.ipynb_checkpoints
+media*
