@@ -1,0 +1,5 @@
+- marimo tutorial --help: open intro tutorial
+- marimo edit: create new notebook
+- marimo eidt python_file.py: edit notebook
+- marimo run python_file.py: serve notebook as an app
+- marimo convert python_file.ipynb > python_file.py: convert old notebooks to marimo noteboks
