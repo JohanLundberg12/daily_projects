@@ -1,0 +1,67 @@
+
+To get the data, run the following command:
+
+```bash
+kaggle datasets download -d kanyianalyst/car-evaluation-dataset                                                                        03/16/24 10:13:18 AM
+```
+- kaggle.json in .kaggle folder.
+
+To unzip:
+
+```bash
+unzip car-evaluation-dataset.zip
+```
+
+For cookiecutter:
+    
+```bash
+cookiecutter https://github.com/drivendata/cookiecutter-data-science 
+```
+
+
+To install the packages, run the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+Also to install the package, run the following command:
+
+```bash
+pip install -e .
+```
+
+
+# packages
+## general environment
+-kaggle
+-marimo
+-ipykernel
+-cookiecutter
+-pytest
+-pipenv
+-dotenv
+
+## data visualization
+- skimpy
+- summarytools
+- ydata-profiling
+- sidetable
+- itables
+
+## generic analysis
+- pandas
+- numpy
+- seaborn
+
+## data
+- dvc
+- pydantic
+
+## modelling
+- pycaret
+- pytorch
+- pytorch lightning
+
+## mlops
+- modelbit

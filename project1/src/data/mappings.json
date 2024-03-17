@@ -1,0 +1,8 @@
+{
+   "mappings": [
+       {"col": "buying_price", "mapping": {"vhigh": 4, "high": 3, "med": 2, "low": 1}},
+       {"col": "maint_price", "mapping": {"vhigh": 4, "high": 3, "med": 2, "low": 1}},
+       {"col": "luggage_boot_size", "mapping": {"big": 3, "med": 2, "small": 1}},
+       {"col": "safety_estimate", "mapping": {"high": 3, "med": 2, "low": 1}}
+   ]
+}
