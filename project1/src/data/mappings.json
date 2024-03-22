@@ -3,6 +3,8 @@
        {"col": "buying_price", "mapping": {"vhigh": 4, "high": 3, "med": 2, "low": 1}},
        {"col": "maint_price", "mapping": {"vhigh": 4, "high": 3, "med": 2, "low": 1}},
        {"col": "luggage_boot_size", "mapping": {"big": 3, "med": 2, "small": 1}},
-       {"col": "safety_estimate", "mapping": {"high": 3, "med": 2, "low": 1}}
+       {"col": "safety_estimate", "mapping": {"high": 3, "med": 2, "low": 1}},
+       {"col": "num_doors", "mapping": {"2": 0, "3":1, "4":2, "5more":3}},
+       {"col": "capacity_pers", "mapping": {"2":0, "4":1, "more":2}}
    ]
 }

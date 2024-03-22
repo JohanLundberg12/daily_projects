@@ -48,7 +48,7 @@ def __():
 
 @app.cell
 def __(pd):
-    file = "data/raw/car evaluation_with.csv"
+    file = "data/raw/car_evaluation.csv"
     df = pd.read_csv(file)
     return df, file
 
@@ -93,7 +93,7 @@ def __():
 @app.cell
 def __(df, make_dataset):
     df1 = make_dataset.encode_ordinal_variables(df, "src/data/mappings.json")
-    df1 = make_dataset.label_encoder(df, "evaluation_level")
+    df1 = make_dataset.label_encoder(df1, "evaluation_level")
     return df1,
 
 
@@ -105,13 +105,25 @@ def __(df1):
 
 @app.cell
 def __(df1):
-    df1["evaluation_level"].unique()
+    df1
     return
 
 
 @app.cell
 def __(df1):
     df1
+    return
+
+
+@app.cell
+def __(df1, skim):
+    skim.skim(df1)
+    return
+
+
+@app.cell
+def __(df1):
+    df1.to_csv("data/processed/car_evaluation_encoded.csv")
     return
 
 
