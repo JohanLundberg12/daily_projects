@@ -9,7 +9,10 @@ def __():
     import pandas as pd
     import lazypredict as lp
     from lazypredict.Supervised import LazyClassifier
-    return LazyClassifier, lp, pd
+
+    import torch, torch.nn as nn
+    from skorch import NeuralNetClassifier
+    return LazyClassifier, NeuralNetClassifier, lp, nn, pd, torch
 
 
 @app.cell
@@ -71,6 +74,70 @@ def __(X_test, X_train, clf, y_test, y_train):
 @app.cell
 def __(models):
     models
+    return
+
+
+@app.cell
+def __(X_train, torch, y_train):
+    X_train_tensor = torch.tensor(X_train.values).float()
+    y_train_tensor = torch.tensor(y_train.values)
+    return X_train_tensor, y_train_tensor
+
+
+@app.cell
+def __(NeuralNetClassifier, nn, torch):
+    class MyClassifier(nn.Module):
+        def __init__(self):
+            super(MyClassifier, self).__init__()
+            self.fc1 = nn.Linear(6, 6)
+            self.fc2 = nn.Linear(6, 4)
+
+            self.sequential = nn.Sequential(
+                self.fc1,
+                nn.ReLU(),
+                self.fc2
+            )
+
+        def forward(self, x):
+            return self.sequential(x)
+
+    model = NeuralNetClassifier(
+        MyClassifier,
+        lr=0.01,
+        criterion=nn.CrossEntropyLoss,
+        batch_size=4,
+        optimizer=torch.optim.Adam
+    )
+    return MyClassifier, model
+
+
+@app.cell
+def __(X_train_tensor, model, y_train_tensor):
+    model.fit(X_train_tensor, y_train_tensor)
+    return
+
+
+@app.cell
+def __(X_test, torch, y_test):
+    X_test_tensor = torch.tensor(X_test.values).float()
+    y_test_tensor = torch.tensor(y_test.values)
+    return X_test_tensor, y_test_tensor
+
+
+@app.cell
+def __(X_test_tensor, model):
+    model.predict(X_test_tensor)
+    return
+
+
+@app.cell
+def __(X_test_tensor, model, y_test_tensor):
+    model.score(X_test_tensor, y_test_tensor)
+    return
+
+
+@app.cell
+def __():
     return
 
 
