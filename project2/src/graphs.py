@@ -22,7 +22,7 @@ def create_subgraph_between_nodes(graph, node_1: str, node_2: str):
     except nx.NetworkxNoPath:
         print(f"No path between {node_1} and {node_2} in the graph.")
         return None, None
-    
+
     subgraph = nx.subgraph(graph, shortest_path)
 
     return subgraph
@@ -45,7 +45,7 @@ def create_subgraph_from_shortest_paths(graph, nodes):
     subgraph = nx.subgraph(graph, nodes_for_subgraph)
 
     return subgraph
-    
+
 
 
 def create_graph(
@@ -116,10 +116,10 @@ def create_graph(
             for table in schema_structure[table]["nodes"].values():
                 if node["name"] == column["name"]:
                     _add_relationship(node, column)
-    
+
     for node in schema_structure.keys():
         _traverse(schema_structure[node])
-    
+
     graph = nx.from_dict_of_dicts(relationships)
     nx.set_node_attributes(graph, node_attributes)
 
