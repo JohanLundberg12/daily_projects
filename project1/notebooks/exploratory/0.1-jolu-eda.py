@@ -48,9 +48,15 @@ def __():
 
 @app.cell
 def __(pd):
-    file = "data/raw/car_evaluation.csv"
-    df = pd.read_csv(file)
+    file = "data/interim/car_evaluation.parquet"
+    df = pd.read_parquet(file)
     return df, file
+
+
+@app.cell
+def __(df):
+    df
+    return
 
 
 @app.cell
@@ -104,18 +110,6 @@ def __(df1):
 
 
 @app.cell
-def __(df1):
-    df1
-    return
-
-
-@app.cell
-def __(df1):
-    df1
-    return
-
-
-@app.cell
 def __(df1, skim):
     skim.skim(df1)
     return
@@ -123,7 +117,7 @@ def __(df1, skim):
 
 @app.cell
 def __(df1):
-    df1.to_csv("data/processed/car_evaluation_encoded.csv")
+    df1
     return
 
 
