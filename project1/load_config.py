@@ -10,6 +10,8 @@ class DataSetConfig:
     path: str
 
 
+# decorator to let hydra know that it needs to load the configuration before
+# running the main function
 @hydra.main(version_base=None, config_path="conf", config_name="config")
 def process_config(cfg: DictConfig) -> None:
     """Hierarchical configuration from multiple sources.
