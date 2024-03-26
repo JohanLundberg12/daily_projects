@@ -13,6 +13,7 @@ class DataSetConfig:
 @hydra.main(version_base=None, config_path="conf", config_name="config")
 def process_config(cfg: DictConfig) -> None:
     """Hierarchical configuration from multiple sources.
+    A outputs folder is created for each run.
 
     Args:
         cfg (DictConfig): Main config file.
