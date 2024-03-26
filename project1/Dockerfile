@@ -1,3 +1,10 @@
+# this was generated using 'docker init' and 'docker compose up --build'
+# What docker init does:
+# Write better Docker configuration than 90% of kids out here.
+# Follows best practices like a nerd.
+# Save time, effort, and sarcastic comments from security folks when their tools generate a report with hundreds of vulnerabilities you never thought existed.
+
+
 # syntax=docker/dockerfile:1
 
 # Comments are provided throughout this file to help you get started.
